@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-12-17 03:42:51 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLUw2NkNWT1M7MjAyMS0xMS0wOTswNDowOTo0NiBQTTszMzU3"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLUw2NkNWT1M7MjAyMS0xMS0wOTswNToxNDowNyBQTTsyOzM0NjA="/>
+        <attribute name="edited" value="QnVua2VyO0RFU0tUT1AtUzY1TkkySTsyMDIxLTEyLTE3OzAzOjQyOjUxIFBNOzM7MzA0Nw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="code" type="String" array="False" size=""/>
+            <declare name="h" type="Real" array="False" size=""/>
+            <declare name="rate" type="Real" array="False" size=""/>
+            <declare name="gpay" type="Real" array="False" size=""/>
+            <declare name="name" type="String" array="False" size=""/>
+            <output expression="&quot;Enter the last name&quot;" newline="True"/>
+            <input variable="name"/>
+            <output expression="&quot;Enter the job code ( L, A or J)&quot;" newline="True"/>
+            <input variable="code"/>
+            <output expression="&quot;Enter hours worked&quot;" newline="True"/>
+            <input variable="h"/>
+            <assign variable="rate" expression="comprate(code)"/>
+            <assign variable="gpay" expression="compg(h,rate)"/>
+            <output expression="&quot;The last name : &quot; &amp; name" newline="True"/>
+            <output expression="&quot;The gross pay: &quot; &amp; gpay" newline="True"/>
+        </body>
+    </function>
+    <function name="compg" type="Real" variable="gpay">
+        <parameters>
+            <parameter name="h" type="Real" array="False"/>
+            <parameter name="rate" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="gpay" type="Real" array="False" size=""/>
+            <if expression="h&gt;40">
+                <then>
+                    <assign variable="gpay" expression="(h-40)*rate*1.5+40*rate"/>
+                </then>
+                <else>
+                    <assign variable="gpay" expression="h*rate"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="comprate" type="Real" variable="rate">
+        <parameters>
+            <parameter name="code" type="String" array="False"/>
+        </parameters>
+        <body>
+            <declare name="rate" type="Real" array="False" size=""/>
+            <if expression="code==&quot;L&quot;">
+                <then>
+                    <assign variable="rate" expression="25"/>
+                </then>
+                <else>
+                    <if expression="code==&quot;A&quot;">
+                        <then>
+                            <assign variable="rate" expression="30"/>
+                        </then>
+                        <else>
+                            <assign variable="rate" expression="50"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

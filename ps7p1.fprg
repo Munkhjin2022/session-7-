@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-12-17 03:48:55 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLUxJMjNESUY7MjAyMS0xMS0wNDswMzowMDo1MSBQTTszMzAw"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLUxJMjNESUY7MjAyMS0xMS0wNDswMzowNjo1MyBQTTsxOzM0MTY="/>
+        <attribute name="edited" value="QnVua2VyO0RFU0tUT1AtUzY1TkkySTsyMDIxLTEyLTE3OzAzOjQ4OjU1IFBNOzI7MzA1Ng=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="q" type="Real" array="False" size=""/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <declare name="p" type="Real" array="False" size=""/>
+            <output expression="&quot;Please enter the quantity&quot;" newline="True"/>
+            <input variable="q"/>
+            <output expression="&quot;Please enter price&quot;" newline="True"/>
+            <input variable="p"/>
+            <call expression="compt(q,p)"/>
+            <assign variable="total" expression="compt(q,p)"/>
+            <output expression="&quot;The quantity: &quot; &amp; q" newline="True"/>
+            <output expression="&quot;The price: &quot; &amp; p" newline="True"/>
+            <output expression="&quot;Total: &quot; &amp; total" newline="True"/>
+        </body>
+    </function>
+    <function name="compt" type="Real" variable="t">
+        <parameters>
+            <parameter name="q" type="Real" array="False"/>
+            <parameter name="p" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="t" type="Real" array="False" size=""/>
+            <assign variable="t" expression="q*p"/>
+            <if expression="t&gt;10000.00">
+                <then>
+                    <assign variable="t" expression="t-(t*0.1)"/>
+                </then>
+                <else/>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

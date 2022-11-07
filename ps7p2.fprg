@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-12-17 03:47:16 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLUxJMjNESUY7MjAyMS0xMS0wNDswMzoyNToxNiBQTTszMzA4"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLUxJMjNESUY7MjAyMS0xMS0wNDswMzozMzozOCBQTTsxOzM0MTk="/>
+        <attribute name="edited" value="QnVua2VyO0RFU0tUT1AtUzY1TkkySTsyMDIxLTEyLTE3OzAzOjQ3OjE2IFBNOzI7MzA1Mg=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="name" type="String" array="False" size=""/>
+            <declare name="batts" type="Integer" array="False" size=""/>
+            <declare name="hit" type="Integer" array="False" size=""/>
+            <declare name="avg" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter the last name&quot;" newline="True"/>
+            <input variable="name"/>
+            <output expression="&quot;Enter the number of hits&quot;" newline="True"/>
+            <input variable="hit"/>
+            <output expression="&quot;Enter the number of batts&quot;" newline="True"/>
+            <input variable="batts"/>
+            <call expression="compavg(hit,batts)"/>
+            <assign variable="avg" expression="compavg(hit, batts)"/>
+            <output expression="&quot;The last name: &quot; &amp; name" newline="True"/>
+            <output expression="&quot;Batting average: &quot; &amp; avg" newline="True"/>
+        </body>
+    </function>
+    <function name="compavg" type="Real" variable="avg">
+        <parameters>
+            <parameter name="batts" type="Integer" array="False"/>
+            <parameter name="hit" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="avg" type="Real" array="False" size=""/>
+            <assign variable="avg" expression="hit/batts"/>
+        </body>
+    </function>
+</flowgorithm>

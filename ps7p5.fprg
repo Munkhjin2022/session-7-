@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-12-17 03:39:48 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLUw2NkNWT1M7MjAyMS0xMS0wOTswNTozNzowNyBQTTszMzU2"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLUw2NkNWT1M7MjAyMS0xMS0wOTswNTo1MDoyMyBQTTsxOzM0NTc="/>
+        <attribute name="edited" value="QnVua2VyO0RFU0tUT1AtUzY1TkkySTsyMDIxLTEyLTE3OzAzOjM5OjQ4IFBNOzM7MzA1OQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="name" type="String" array="False" size=""/>
+            <declare name="crehours" type="Integer" array="False" size=""/>
+            <declare name="code" type="String" array="False" size=""/>
+            <declare name="cpc" type="Real" array="False" size=""/>
+            <declare name="t" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter the last name&quot;" newline="True"/>
+            <input variable="name"/>
+            <output expression="&quot;Enter district code O or I&quot;" newline="True"/>
+            <input variable="code"/>
+            <output expression="&quot;Enter credit hours&quot;" newline="True"/>
+            <input variable="crehours"/>
+            <assign variable="t" expression="compt(code, crehours)"/>
+            <output expression="&quot;The last name: &quot; &amp; name" newline="True"/>
+            <output expression="&quot;Tuition: &quot; &amp; t" newline="True"/>
+        </body>
+    </function>
+    <function name="compt" type="Real" variable="t">
+        <parameters>
+            <parameter name="code" type="String" array="False"/>
+            <parameter name="credits" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="t" type="Real" array="False" size=""/>
+            <declare name="cpc" type="Integer" array="False" size=""/>
+            <if expression="code==&quot;I&quot;">
+                <then>
+                    <assign variable="cpc" expression="250"/>
+                </then>
+                <else>
+                    <assign variable="cpc" expression="500"/>
+                </else>
+            </if>
+            <assign variable="t" expression="cpc*credits"/>
+        </body>
+    </function>
+</flowgorithm>
